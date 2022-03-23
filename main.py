@@ -65,14 +65,14 @@ def tiktok_dl(client, message):
       "link": link
     }
     headers = {
-      'x-rapidapi-host': "tiktok-download-without-watermark.p.rapidapi.com",
-      'x-rapidapi-key': "0d3a4fc5f5msh9983d111aa8e919p1bb9cejsn3436d517b9ae"
+      'x-rapidapi-host': "tiktok-info.p.rapidapi.com",
+      'x-rapidapi-key': "03fc92c38amsh4e78d7005d79f01p13e4f4jsnf955c12a15ea"
     }
     
     ### Get your Free TikTok API from https://rapidapi.com/TerminalWarlord/api/tiktok-info/
     #Using the default one can stop working any moment 
     
-    api = f"https://tiktok-download-without-watermark.p.rapidapi.com/analysis"
+    api = f"https://tiktok-info.p.rapidapi.com/dl/"
     r = requests.get(api, params=params, headers=headers).json()['videoLinks']['download']
     directory = str(round(time.time()))
     filename = str(int(time.time()))+'.mp4'
