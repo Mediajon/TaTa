@@ -1,8 +1,6 @@
-# Copyright 2021 TerminalWarlord under the terms of the MIT
-# license found at https://github.com/TerminalWarlord/TikTok-Downloader-Bot/blob/master/LICENSE
+# Copyright 2022 Mediajon under the terms of the MIT
 # Encoding = 'utf-8'
 # Fork and Deploy, do not modify this repo and claim it yours
-# For collaboration mail me at dev.jaybee@gmail.com
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, InlineQueryResultArticle, InputTextMessageContent
 import shutil
@@ -33,10 +31,9 @@ app = Client("MediajonTata", bot_token=bot_token, api_id=api, api_hash=hash, wor
 def start(client, message):
     kb = [[InlineKeyboardButton('Channel 🛡', url=chnnl),InlineKeyboardButton('Repo 🔰', url="https://github.com/Mediajon/TaTa/")]]
     reply_markup = InlineKeyboardMarkup(kb)
-    app.send_message(chat_id=message.from_user.id, text=f"Hello there, I am **TikTok Downloader Bot**.\nI can download TikTok video without Watermark.\n\n"
-                          "__**Developer :**__ __@SSTaTa__\n"
-                          "__**Language :**__ __Python__\n"
-                          "__**Framework :**__ __🔥 Pyrogram__",
+    app.send_message(chat_id=message.from_user.id, text=f"Hello there, I am **TikTok Video File Bot**.\nVideolarni TikTok yozuvisiz skachat qilaman!.\n\n"
+                          "__**Developer :**__ __@Mediajon__\n"
+                          "__**Aloqa :**__ __Qiling__\n",
                      parse_mode='md',
                      reply_markup=reply_markup)
 
@@ -47,8 +44,8 @@ def start(client, message):
 def help(client, message):
     kb = [[InlineKeyboardButton('Channel 🛡', url=chnnl),InlineKeyboardButton('Repo 🔰', url="https://github.com/Mediajon/TaTa/")]]
     reply_markup = InlineKeyboardMarkup(kb)
-    app.send_message(chat_id=message.from_user.id, text=f"Hello there, I am **TikTok Downloader Bot**.\nI can download any TikTok video from a given link.\n\n"
-                                            "__Send me a TikTok video link__",
+    app.send_message(chat_id=message.from_user.id, text=f"Salom, I am **TikTok Video File Bot**.\nVideolarni TikTok yozuvisiz skachat qilaman!.\n\n"
+                                            "__TkTok ssilkasini kiriting__",
                      parse_mode='md',
                      reply_markup=reply_markup)
 
@@ -68,14 +65,14 @@ def tiktok_dl(client, message):
       "link": link
     }
     headers = {
-      'x-rapidapi-host': "tiktok-downloader-download-tiktok-videos-without-watermark.p.rapidapi.com",
-      'x-rapidapi-key': "03fc92c38amsh4e78d7005d79f01p13e4f4jsnf955c12a15ea"
+      'x-rapidapi-host': "tiktok-download-without-watermark.p.rapidapi.com",
+      'x-rapidapi-key': "0d3a4fc5f5msh9983d111aa8e919p1bb9cejsn3436d517b9ae"
     }
     
     ### Get your Free TikTok API from https://rapidapi.com/TerminalWarlord/api/tiktok-info/
     #Using the default one can stop working any moment 
     
-    api = f"https://tiktok-downloader-download-tiktok-videos-without-watermark.p.rapidapi.com/vid/index"
+    api = f"https://tiktok-download-without-watermark.p.rapidapi.com/analysis"
     r = requests.get(api, params=params, headers=headers).json()['videoLinks']['download']
     directory = str(round(time.time()))
     filename = str(int(time.time()))+'.mp4'
